@@ -1,10 +1,10 @@
 
 file = 'Textfile.py'
 
-def write_to_file(studentTuple):
+def write_to_file(student):
 
-    new_file = open(file,'a')
-    new_file.write(studentTuple + "\n")
+    new_file = open(file,'a')   #Append
+    new_file.write(student + "\n")  #New Line
     new_file.close()
 
 def get_student_info(studentName):
@@ -14,7 +14,7 @@ def get_student_info(studentName):
         student_score = int(input("Enter the scores "))
         test_scores.append(student_score)
         stop = input("Press s to stop")
-        if(stop != "s"):
+        if(stop == "s"):   #If you press s, it will go to the next person
             break
         write_to_file(str((studentName, tuple(test_scores))))
 
@@ -33,14 +33,14 @@ def main():
     read_from_file()
 
 if __name__ == "__main__":
-    main()
+    main()  #Output
 
 
 ('Ben', (80,))
 ('Ben', (80, 70))
-('Eric', (80,))
-('Eric', (80, 70))
-('David', (60,))
-('David', (60, 40))
-('Frank', (60,))
-('Frank', (60, 42))
+('Eric', (90,))
+('Eric', (90, 20))
+('David', (67,))
+('David', (67, 51))
+('Frank', (56,))
+('Frank', (56, 45))
